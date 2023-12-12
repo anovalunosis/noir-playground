@@ -1,11 +1,10 @@
-fn main(x: Field, y: pub Field) {
-    assert(x != y);
-}
+fn main(
+    key: u32, 
+    lock_1: pub u32, 
+    lock_2: pub u32
+) {
+    assert(key != 1);
+    assert(lock_1 % key == 0);
+    assert(lock_2 % key == 0);
 
-#[test]
-fn test_main() {
-    main(1, 2);
-
-    // Uncomment to make test fail
-    // main(1, 1);
 }
